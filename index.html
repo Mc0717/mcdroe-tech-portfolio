@@ -1,74 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mcdroe Erenea | IT & Creative Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<header>
-    <h1>My Creative Portfolio</h1>
-    <p>Branding | IT | Print | Social Media</p>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">MCDROE</div>
+    <ul>
+        <li><a href="#branding">Branding</a></li>
+        <li><a href="#it">IT</a></li>
+        <li><a href="#print">Print</a></li>
+        <li><a href="#social">Social</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero">
+    <div class="hero-overlay">
+        <h1>Creative Designer & IT Specialist</h1>
+        <p>I bridge technology and creativity to build powerful digital experiences that stand out.</p>
+        <a href="#branding" class="btn">View My Work</a>
+    </div>
 </header>
 
-<section class="category">
+<!-- BRANDING -->
+<section id="branding" class="category fade-in">
     <h2>Branding</h2>
     <div class="gallery">
-        <img src="images/branding/gymnastics-logo.jpg" alt="Gymnastics Logo">
-        <img src="images/branding/jiloco-logo.jpg" alt="Jiloco Logo">
-        <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo">
+        <img src="images/branding/gymnastics-logo.jpg">
+        <img src="images/branding/jiloco-logo.jpg">
+        <img src="images/branding/mutya-logo.jpg">
     </div>
 </section>
 
-<section class="category">
+<!-- IT PROJECTS -->
+<section id="it" class="category fade-in">
     <h2>IT Projects</h2>
     <div class="gallery">
-        <img src="images/it/animation-logo.jpg" alt="Animation Logo">
-        <img src="images/it/usa-pos-1.jpg" alt="USA POS 1">
-        <img src="images/it/usa-pos-2.jpg" alt="USA POS 2">
+        <img src="images/it/animation-logo.jpg">
+        <img src="images/it/usa-pos-1.jpg">
+        <img src="images/it/usa-pos-2.jpg">
     </div>
 </section>
 
-<section class="category">
+<!-- PRINT -->
+<section id="print" class="category fade-in">
     <h2>Print Designs</h2>
     <div class="gallery">
-        <img src="images/print/graduation-program.jpg" alt="Graduation Program">
-        <img src="images/print/invitation-birthday.jpg" alt="Birthday Invitation">
-        <img src="images/print/ligtas-undas-2024-1.jpg" alt="Ligtas Undas 2024 1">
-        <img src="images/print/ligtas-undas-2024-2.jpg" alt="Ligtas Undas 2024 2">
-        <img src="images/print/plaque-1.jpg" alt="Plaque 1">
-        <img src="images/print/plaque-2.jpg" alt="Plaque 2">
-        <img src="images/print/sintra-board-1.jpg" alt="Sintra Board 1">
-        <img src="images/print/sintra-board-2.jpg" alt="Sintra Board 2">
-        <img src="images/print/thank-you-card.jpg" alt="Thank You Card">
-        <img src="images/print/u-week-usa.jpg" alt="U Week USA">
+        <img src="images/print/graduation-program.jpg">
+        <img src="images/print/invitation-birthday.jpg">
+        <img src="images/print/ligtas-undas-2024-1.jpg">
+        <img src="images/print/ligtas-undas-2024-2.jpg">
+        <img src="images/print/plaque-1.jpg">
+        <img src="images/print/plaque-2.jpg">
     </div>
 </section>
 
-<section class="category">
+<!-- SOCIAL -->
+<section id="social" class="category fade-in">
     <h2>Social Media Designs</h2>
     <div class="gallery">
-        <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Post 1">
-        <img src="images/social/pnp-fb-post-2.jpg" alt="PNP Post 2">
-        <img src="images/social/pnp-fb-post-3.jpg" alt="PNP Post 3">
-        <img src="images/social/pnp-fb-post-4.jpg" alt="PNP Post 4">
-        <img src="images/social/pnp-fb-post-5.jpg" alt="PNP Post 5">
-        <img src="images/social/pnp-fb-post-6.jpg" alt="PNP Post 6">
-        <img src="images/social/pnp-fb-post-7.jpg" alt="PNP Post 7">
-        <img src="images/social/pnp-fb-post-8.jpg" alt="PNP Post 8">
-        <img src="images/social/pnp-fb-post-9.jpg" alt="PNP Post 9">
-        <img src="images/social/pnp-fb-post-10.jpg" alt="PNP Post 10">
-        <img src="images/social/pnp-fb-post-11.jpg" alt="PNP Post 11">
-        <img src="images/social/pnp-fb-post-12.jpg" alt="PNP Post 12">
+        <img src="images/social/pnp-fb-post-1.jpg">
+        <img src="images/social/pnp-fb-post-2.jpg">
+        <img src="images/social/pnp-fb-post-3.jpg">
+        <img src="images/social/pnp-fb-post-4.jpg">
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Mcdroe Erenea | All Rights Reserved</p>
+    <p>© 2026 Mcdroe Erenea | Designed & Developed by Mcdroe</p>
 </footer>
+
+<!-- IMAGE MODAL -->
+<div class="modal" id="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
-
