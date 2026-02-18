@@ -1,119 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mcdroe Erenea | Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">My Portfolio</div>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button id="theme-toggle">🌙</button></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="overlay">
-        <h1>Mcdroe S. Erenea</h1>
-        <p>IT Support Specialist | Graphic Designer</p>
-        <h3>Bridging Technology and Creativity.</h3>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View Work</a>
-            <a href="resume.pdf" class="btn-outline" download>Download Resume</a>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>
-        I combine technical expertise in IT support, system troubleshooting, and networking
-        with creative skills in branding and design. My goal is to deliver efficient,
-        visually impactful solutions that solve real-world problems.
-    </p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="fade-in">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        <div class="card">
-            <h3>Technical</h3>
-            <p>IT Support, Hardware Repair, Networking, System Installation</p>
-        </div>
-        <div class="card">
-            <h3>Creative</h3>
-            <p>Adobe Photoshop, Canva, Branding, Multimedia Editing</p>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects" class="fade-in">
-    <h2>Selected Projects</h2>
+    <h2>Projects</h2>
+
+    <!-- BRANDING -->
+    <h3 class="category-title">Branding & Identity</h3>
     <div class="projects-grid">
+
         <div class="project-card">
-            <h3>Mutya ng Mga Guro 2018</h3>
-            <p>Event animation using Adobe After Effects to enhance school presentation quality.</p>
+            <img src="images/branding/gymnastics-logo.jpg" alt="">
+            <h4>Gymnastics Logo</h4>
         </div>
+
         <div class="project-card">
-            <h3>USA Cafeteria System</h3>
-            <p>Java-based food reservation system built in NetBeans for streamlined ordering.</p>
+            <img src="images/branding/jiloco-logo.jpg" alt="">
+            <h4>Jiloco Logo</h4>
         </div>
+
         <div class="project-card">
-            <h3>Branding & Logos</h3>
-            <p>Created professional logos and branding materials for schools and organizations.</p>
+            <img src="images/branding/mutya-logo.jpg" alt="">
+            <h4>Mutya Logo</h4>
         </div>
+
     </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>Email: mcdroe0717@gmail.com</p>
-    <p>Location: Numancia, Aklan, Philippines</p>
-</section>
 
-<footer>
-    <p>© 2026 Mcdroe Erenea | All Rights Reserved</p>
-</footer>
+    <!-- IT -->
+    <h3 class="category-title">IT & System Projects</h3>
+    <div class="projects-grid">
 
-<script>
-/* DARK MODE TOGGLE */
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-});
-
-/* SCROLL ANIMATION */
-const faders = document.querySelectorAll(".fade-in");
-const appearOptions = { threshold: 0.2 };
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("appear");
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-</script>
-
-</body>
-</html>
-
+        <div class="project-card">
+            <img src="images/it/animation-logo.jpg" alt="">
+            <h4>Animated Logo Project</h4>
+        </div>
