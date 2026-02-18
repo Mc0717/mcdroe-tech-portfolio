@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mcdroe Erenea | IT & Creative Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdroe Erenea | IT & Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <div class="logo">PORTFOLIO</div>
     <ul>
@@ -22,9 +19,8 @@
     </ul>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
-    <div class="hero-content">
+    <div class="hero-content fade-in">
         <h1>Mcdroe Erenea</h1>
         <h2>IT Support Specialist | Graphic Designer</h2>
         <p>Bridging technology and creativity to deliver reliable IT solutions and impactful digital designs.</p>
@@ -32,93 +28,36 @@
     </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section fade-in">
     <h2>About Me</h2>
     <p>
         Dedicated IT professional with 5+ years of experience in technical support, 
         system troubleshooting, hardware repair, network installation, and creative design.
-        Experienced in government and freelance environments, delivering structured IT solutions
-        and impactful branding projects.
     </p>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section dark">
+<section id="projects" class="section dark fade-in">
     <h2>Featured Projects</h2>
-
     <div class="project-grid">
-
-        <!-- POS SYSTEM -->
         <div class="project-card">
             <img src="images/it/usa-pos-1.jpg" alt="USA POS System">
             <div class="project-info">
                 <h3>USA Cafeteria POS System</h3>
-                <p>Java-based food reservation system built using NetBeans for campus cafeteria management.</p>
+                <p>Java-based food reservation system.</p>
             </div>
         </div>
-
-        <!-- BRANDING -->
-        <div class="project-card">
-            <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo">
-            <div class="project-info">
-                <h3>Mutya ng Mga Guro Branding</h3>
-                <p>Logo and event branding materials designed in Adobe Photoshop.</p>
-            </div>
         </div>
-
-        <!-- PNP DESIGN -->
-        <div class="project-card">
-            <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Design">
-            <div class="project-info">
-                <h3>PNP Social Media & Tarpaulin</h3>
-                <p>Official tarpaulin layouts and Facebook graphics aligned with organizational branding.</p>
-            </div>
-        </div>
-
-        <!-- ANIMATION -->
-        <div class="project-card">
-            <img src="images/it/animation-logo.jpg" alt="Animation Project">
-            <div class="project-info">
-                <h3>Event Animation Video</h3>
-                <p>Animated promotional video using Adobe After Effects for school events.</p>
-            </div>
-        </div>
-
-    </div>
 </section>
 
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        <div>IT Troubleshooting</div>
-        <div>Computer & Laptop Repair</div>
-        <div>Mobile Device Repair</div>
-        <div>Network Cabling</div>
-        <div>System Installation</div>
-        <div>Java (NetBeans)</div>
-        <div>Adobe Photoshop</div>
-        <div>After Effects</div>
-        <div>Canva</div>
-        <div>Microsoft Office</div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section dark">
-    <h2>Contact</h2>
-    <p>Email: mcdroe0717@gmail.com</p>
-    <p>Phone: 0956 229 4924</p>
-    <p>Location: Numancia, Aklan, Philippines</p>
-</section>
-
-<footer>
+<footer class="fade-in">
     © 2026 Mcdroe Erenea | All Rights Reserved
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
-
-
