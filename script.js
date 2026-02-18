@@ -7,7 +7,7 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.3 });
+}, { threshold: 0.1 }); // Trigger earlier for better feel
 
 faders.forEach(fade => {
     observer.observe(fade);
@@ -16,7 +16,7 @@ faders.forEach(fade => {
 // Image Modal
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
-const images = document.querySelectorAll(".gallery img");
+const images = document.querySelectorAll(".project-card img"); // Fixed selector
 const closeBtn = document.querySelector(".close");
 
 images.forEach(img => {
@@ -27,6 +27,8 @@ images.forEach(img => {
 });
 
 closeBtn.onclick = () => modal.style.display = "none";
+
+// Close if user clicks outside the image
 window.onclick = (e) => {
     if (e.target == modal) modal.style.display = "none";
 };
