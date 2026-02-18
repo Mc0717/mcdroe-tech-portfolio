@@ -126,17 +126,40 @@ nav ul li a:hover {
 }
 
 /* SKILLS */
-.skills-grid {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-.skills-grid div {
+.project-card {
     background: #1e293b;
-    padding: 15px;
-    border-radius: 8px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    cursor: pointer;
 }
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
 
 /* FOOTER */
 footer {
@@ -156,3 +179,4 @@ footer {
         font-size: 2rem;
     }
 }
+
