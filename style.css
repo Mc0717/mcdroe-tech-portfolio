@@ -88,12 +88,8 @@ nav ul li a:focus {
 }
 
 @keyframes zoomIn {
-  0% {
-    background-size: 100% auto;
-  }
-  100% {
-    background-size: 110% auto;
-  }
+  0% { background-size: 100% auto; }
+  100% { background-size: 110% auto; }
 }
 
 .hero-content h1,
@@ -103,29 +99,11 @@ nav ul li a:focus {
   animation: fadeSlide 1.5s ease forwards;
 }
 
-.hero-content h1 {
-  animation-delay: 0.5s;
-  font-size: 3rem;
-}
+.hero-content h1 { animation-delay: 0.5s; font-size: 3rem; }
+.hero-content h2 { animation-delay: 1s; color: #3b82f6; margin-top: 10px; font-weight: 400; }
+.hero-content p { animation-delay: 1.5s; margin-top: 15px; max-width: 600px; margin: auto; }
 
-.hero-content h2 {
-  animation-delay: 1s;
-  color: #3b82f6;
-  margin-top: 10px;
-  font-weight: 400;
-}
-
-.hero-content p {
-  animation-delay: 1.5s;
-  margin-top: 15px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.hero-buttons {
-  margin-top: 25px;
-}
-
+.hero-buttons { margin-top: 25px; }
 .btn {
   display: inline-block;
   margin: 5px;
@@ -136,9 +114,7 @@ nav ul li a:focus {
   border-radius: 30px;
   transition: 0.3s;
 }
-
-.btn:hover,
-.btn:focus {
+.btn:hover, .btn:focus {
   background: #2563eb;
   transform: scale(1.05);
   outline: none;
@@ -153,24 +129,13 @@ nav ul li a:focus {
 }
 
 @keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(15px);
-  }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
 }
 
 /* Sections */
@@ -179,14 +144,9 @@ nav ul li a:focus {
   text-align: center;
 }
 
-.section.dark {
-  background: #111827;
-}
+.section.dark { background: #111827; }
 
-.section h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
+.section h2 { margin-bottom: 30px; font-size: 2rem; }
 
 /* Project Grid */
 .project-grid {
@@ -209,9 +169,10 @@ nav ul li a:focus {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Project Images */
 .project-card img {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 16/9; /* keeps images proportional */
   object-fit: cover;
   transition: transform 0.4s;
 }
@@ -220,13 +181,14 @@ nav ul li a:focus {
   transform: scale(1.05);
 }
 
+/* Project Overlay */
 .project-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.8);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -287,7 +249,7 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0,0,0,0.95);
 }
 
 .modal-content {
@@ -321,8 +283,7 @@ footer {
 }
 
 /* Prev / Next Buttons */
-.prev,
-.next {
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -335,16 +296,9 @@ footer {
   user-select: none;
   transform: translateY(-50%);
 }
-.prev {
-  left: 20px;
-}
-.next {
-  right: 20px;
-}
-.prev:hover,
-.next:hover {
-  color: #3b82f6;
-}
+.prev { left: 20px; }
+.next { right: 20px; }
+.prev:hover, .next:hover { color: #3b82f6; }
 
 /* Responsive adjustments */
 @media(max-width: 768px) {
@@ -359,12 +313,11 @@ footer {
     padding: 15px;
     border-radius: 10px;
   }
-  nav ul.show {
-    display: flex;
-  }
-  .hamburger {
-    display: flex;
-    background: none;
-    border: none;
+  nav ul.show { display: flex; }
+  .hamburger { display: flex; background: none; border: none; }
+  /* Project cards on mobile */
+  .project-card img {
+    height: auto;
+    max-height: none;
   }
 }
