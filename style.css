@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    transition:0.3s ease;
+}
+
+.light-mode{
+    background:white;
+    color:black;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+}
+
+nav button{
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('cover.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.6);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero-buttons{
+    margin-top:20px;
+}
+
+.btn{
+    padding:10px 20px;
+    background:#FF6B00;
+    color:white;
+    text-decoration:none;
+    margin-right:10px;
+    border-radius:5px;
+}
+
+.btn-outline{
+    padding:10px 20px;
+    border:2px solid #00BFFF;
+    color:#00BFFF;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.skills-grid,
+.projects-grid{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.card,
+.project-card{
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+    width:280px;
+    transition:0.3s;
+}
+
+.card:hover,
+.project-card:hover{
+    transform:translateY(-10px);
+    background:#222;
+}
+
+/* FADE IN */
+.fade-in{
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.6s ease;
+}
+
+.appear{
+    opacity:1;
+    transform:translateY(0);
+}
+
+footer{
+    padding:20px;
+    text-align:center;
+    background:#111;
+}
