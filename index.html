@@ -4,20 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mcdroe Erenea | IT & Creative Portfolio</title>
-
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <!-- NAVIGATION -->
 <nav>
     <div class="logo">Mcdroe Erenea</div>
-    <ul>
+    <div class="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -31,14 +29,17 @@
     <div class="hero-content">
         <h1>Mcdroe Erenea</h1>
         <h2>IT Support Specialist | Graphic Designer</h2>
-        <p>Bridging technology and creativity to deliver reliable IT solutions and impactful digital designs. Passionate about solving problems and helping businesses grow through IT and design.</p>
-        <a href="#projects" class="btn">View My Work</a>
-        <a href="Mcdroe_Erenea_Resume.pdf" class="btn" download>Download Resume</a>
+        <p>Bridging technology and creativity to deliver reliable IT solutions and impactful digital designs.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="Mcdroe_Erenea_Resume.pdf" class="btn" download>Download Resume</a>
+        </div>
+        <div class="scroll-down">&#8595;</div>
     </div>
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section fade-in-section">
     <h2>About Me</h2>
     <p>
         I’m Mcdroe, a dedicated IT and creative professional with 5+ years of experience in technical support, network setup, system troubleshooting, and digital design.  
@@ -47,43 +48,40 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section dark">
+<section id="projects" class="section dark fade-in-section">
     <h2>Featured Projects</h2>
     <div class="project-grid">
-        <!-- POS SYSTEM -->
-        <div class="project-card fade-in">
-            <img src="images/it/usa-pos-1.jpg" alt="USA POS System" class="project-image"/>
-            <div class="project-info">
+        <!-- Sample Project Card -->
+        <div class="project-card">
+            <img src="images/it/usa-pos-1.jpg" alt="USA POS System" class="project-image">
+            <div class="project-overlay">
                 <h3>USA Cafeteria POS System</h3>
                 <p>Java-based food reservation system built using NetBeans for campus cafeteria management.</p>
                 <p><strong>Tools:</strong> Java, NetBeans</p>
             </div>
         </div>
 
-        <!-- BRANDING -->
-        <div class="project-card fade-in">
-            <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo" class="project-image"/>
-            <div class="project-info">
+        <div class="project-card">
+            <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo" class="project-image">
+            <div class="project-overlay">
                 <h3>Mutya ng Mga Guro Branding</h3>
                 <p>Logo and event branding materials designed in Adobe Photoshop.</p>
                 <p><strong>Tools:</strong> Photoshop</p>
             </div>
         </div>
 
-        <!-- PNP DESIGN -->
-        <div class="project-card fade-in">
-            <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Social Media and Tarpaulin" class="project-image"/>
-            <div class="project-info">
+        <div class="project-card">
+            <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Social Media and Tarpaulin" class="project-image">
+            <div class="project-overlay">
                 <h3>PNP Social Media & Tarpaulin</h3>
                 <p>Official tarpaulin layouts and Facebook graphics aligned with organizational branding.</p>
                 <p><strong>Tools:</strong> Photoshop, Illustrator</p>
             </div>
         </div>
 
-        <!-- ANIMATION -->
-        <div class="project-card fade-in">
-            <img src="images/it/animation-logo.jpg" alt="Animation Project" class="project-image"/>
-            <div class="project-info">
+        <div class="project-card">
+            <img src="images/it/animation-logo.jpg" alt="Animation Project" class="project-image">
+            <div class="project-overlay">
                 <h3>Event Animation Video</h3>
                 <p>Animated promotional video using Adobe After Effects for school events.</p>
                 <p><strong>Tools:</strong> After Effects</p>
@@ -93,7 +91,7 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="section">
+<section id="skills" class="section fade-in-section">
     <h2>Skills</h2>
     <div class="skills-grid">
         <div>IT Troubleshooting</div>
@@ -110,7 +108,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section dark">
+<section id="contact" class="section dark fade-in-section">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:mcdroe0717@gmail.com">mcdroe0717@gmail.com</a></p>
     <p>Phone: <a href="tel:+639562294924">0956 229 4924</a></p>
@@ -125,6 +123,5 @@
 
 <!-- JS -->
 <script src="script.js"></script>
-
 </body>
 </html>
