@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mcdroe Erenea | IT & Creative Portfolio</title>
 
-<link rel="stylesheet" href="style.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-    <div class="logo">PORTFOLIO</div>
+    <div class="logo">Mcdroe Erenea</div>
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank">LinkedIn</a></li>
     </ul>
 </nav>
 
@@ -27,8 +31,9 @@
     <div class="hero-content">
         <h1>Mcdroe Erenea</h1>
         <h2>IT Support Specialist | Graphic Designer</h2>
-        <p>Bridging technology and creativity to deliver reliable IT solutions and impactful digital designs.</p>
+        <p>Bridging technology and creativity to deliver reliable IT solutions and impactful digital designs. Passionate about solving problems and helping businesses grow through IT and design.</p>
         <a href="#projects" class="btn">View My Work</a>
+        <a href="Mcdroe_Erenea_Resume.pdf" class="btn" download>Download Resume</a>
     </div>
 </header>
 
@@ -36,10 +41,8 @@
 <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-        Dedicated IT professional with 5+ years of experience in technical support, 
-        system troubleshooting, hardware repair, network installation, and creative design.
-        Experienced in government and freelance environments, delivering structured IT solutions
-        and impactful branding projects.
+        I’m Mcdroe, a dedicated IT and creative professional with 5+ years of experience in technical support, network setup, system troubleshooting, and digital design.  
+        I’ve worked in government and freelance environments, delivering structured IT solutions, branding projects, and promotional designs that make a difference.
     </p>
 </section>
 
@@ -48,38 +51,42 @@
     <h2>Featured Projects</h2>
     <div class="project-grid">
         <!-- POS SYSTEM -->
-        <div class="project-card">
-            <img src="images/it/usa-pos-1.jpg" alt="USA POS System" />
+        <div class="project-card fade-in">
+            <img src="images/it/usa-pos-1.jpg" alt="USA POS System" class="project-image"/>
             <div class="project-info">
                 <h3>USA Cafeteria POS System</h3>
                 <p>Java-based food reservation system built using NetBeans for campus cafeteria management.</p>
+                <p><strong>Tools:</strong> Java, NetBeans</p>
             </div>
         </div>
 
         <!-- BRANDING -->
-        <div class="project-card">
-            <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo" />
+        <div class="project-card fade-in">
+            <img src="images/branding/mutya-logo.jpg" alt="Mutya Logo" class="project-image"/>
             <div class="project-info">
                 <h3>Mutya ng Mga Guro Branding</h3>
                 <p>Logo and event branding materials designed in Adobe Photoshop.</p>
+                <p><strong>Tools:</strong> Photoshop</p>
             </div>
         </div>
 
         <!-- PNP DESIGN -->
-        <div class="project-card">
-            <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Social Media and Tarpaulin" />
+        <div class="project-card fade-in">
+            <img src="images/social/pnp-fb-post-1.jpg" alt="PNP Social Media and Tarpaulin" class="project-image"/>
             <div class="project-info">
                 <h3>PNP Social Media & Tarpaulin</h3>
                 <p>Official tarpaulin layouts and Facebook graphics aligned with organizational branding.</p>
+                <p><strong>Tools:</strong> Photoshop, Illustrator</p>
             </div>
         </div>
 
         <!-- ANIMATION -->
-        <div class="project-card">
-            <img src="images/it/animation-logo.jpg" alt="Animation Project" />
+        <div class="project-card fade-in">
+            <img src="images/it/animation-logo.jpg" alt="Animation Project" class="project-image"/>
             <div class="project-info">
                 <h3>Event Animation Video</h3>
                 <p>Animated promotional video using Adobe After Effects for school events.</p>
+                <p><strong>Tools:</strong> After Effects</p>
             </div>
         </div>
     </div>
@@ -104,15 +111,20 @@
 
 <!-- CONTACT -->
 <section id="contact" class="section dark">
-    <h2>Contact</h2>
-    <p>Email: mcdroe0717@gmail.com</p>
-    <p>Phone: 0956 229 4924</p>
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mcdroe0717@gmail.com">mcdroe0717@gmail.com</a></p>
+    <p>Phone: <a href="tel:+639562294924">0956 229 4924</a></p>
     <p>Location: Numancia, Aklan, Philippines</p>
+    <a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank" class="btn">Connect on LinkedIn</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>&copy; 2026 Mcdroe Erenea | All Rights Reserved</p>
 </footer>
+
+<!-- JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
