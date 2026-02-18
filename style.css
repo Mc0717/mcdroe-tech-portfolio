@@ -180,3 +180,11 @@ footer {
     font-size: 2rem;
   }
 }
+
+/* NEW: Style for project images to prevent zooming */
+.project-image {
+  width: 100%;            /* Make the image take full width of its container */
+  height: auto;           /* Maintain aspect ratio */
+  object-fit: contain;    /* Ensure entire image fits inside container */
+  display: block;         /* Remove inline spacing */
+}
