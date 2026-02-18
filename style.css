@@ -1,2 +1,182 @@
-<div><br class="Apple-interchange-newline">* {<br> margin: 0;<br> padding: 0;<br> box-sizing: border-box;<br>}<br><br>body {<br> font-family: 'Poppins', sans-serif;<br> background: #0f172a;<br> color: #fff;<br> scroll-behavior: smooth;<br>}<br><br>/* NAVBAR */<br>nav {<br> position: fixed;<br> width: 100%;<br> top: 0;<br> padding: 15px 8%;<br> display: flex;<br> justify-content: space-between;<br> background: rgba(15,23,42,0.9);<br> backdrop-filter: blur(8px);<br> z-index: 1000;<br>}<br><br>nav ul {<br> display: flex;<br> list-style: none;<br>}<br><br>nav ul li {<br> margin-left: 25px;<br>}<br><br>nav ul li a {<br> text-decoration: none;<br> color: white;<br> transition: 0.3s;<br>}<br><br>nav ul li a:hover {<br> color: #3b82f6;<br>}<br><br>/* HERO SECTION */<br>.hero {<br> height: 100vh;<br> min-height: 600px;<br> background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),<br> url("images/cover.jpg") center center / cover no-repeat;<br> background-attachment: fixed;<br> display: flex;<br> align-items: center;<br> justify-content: center;<br> text-align: center;<br> padding: 20px;<br>}<br><br>.hero-content h1 {<br> font-size: 3rem;<br>}<br><br>.hero-content h2 {<br> margin-top: 10px;<br> font-weight: 400;<br> color: #3b82f6;<br>}<br><br>.hero-content p {<br> margin-top: 15px;<br> max-width: 600px;<br> margin-left: auto;<br> margin-right: auto;<br> opacity: 0.85;<br>}<br><br>.btn {<br> display: inline-block;<br> margin-top: 25px;<br> padding: 12px 30px;<br> background: #3b82f6;<br> color: white;<br> text-decoration: none;<br> border-radius: 30px;<br> transition: 0.3s;<br>}<br><br>.btn:hover {<br> background: #2563eb;<br> transform: scale(1.05);<br>}<br><br>/* SECTIONS */<br>.section {<br> padding: 100px 8%;<br> text-align: center;<br>}<br><br>.section.dark {<br> background: #111827;<br>}<br><br>.section h2 {<br> margin-bottom: 30px;<br> font-size: 2rem;<br>}<br><br>/* CARDS */<br>.cards {<br> display: grid;<br> grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));<br> gap: 25px;<br>}<br><br>.card {<br> background: #1e293b;<br> padding: 25px;<br> border-radius: 15px;<br> transition: 0.3s;<br>}<br><br>.card:hover {<br> transform: translateY(-10px);<br> box-shadow: 0 15px 30px rgba(0,0,0,0.5);<br>}<br><br>/* SKILLS */<br>.project-grid {<br> display: grid;<br> grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));<br> gap: 30px;<br>}<br><br>.project-card {<br> background: #1e293b;<br> border-radius: 15px;<br> overflow: hidden;<br> transition: 0.4s ease;<br> cursor: pointer;<br>}<br><br>.project-card img {<br> width: 100%;<br> height: 220px;<br> object-fit: cover;<br> transition: 0.4s;<br>}<br><br>.project-info {<br> padding: 20px;<br>}<br><br>.project-card:hover {<br> transform: translateY(-10px);<br> box-shadow: 0 20px 40px rgba(0,0,0,0.5);<br>}<br><br>.project-card:hover img {<br> transform: scale(1.05);<br>}<br><br><br>/* FOOTER */<br>footer {<br> padding: 30px;<br> text-align: center;<br> background: #020617;<br>}<br><br>/* MOBILE FIX */<br>@media (max-width: 768px) {<br> .hero {<br> background-attachment: scroll;<br> height: 90vh;<br> }<br><br> .hero-content h1 {<br> font-size: 2rem;<br> }<br>}<br><br id="textarea-placeholder-break"></div>
+/* Reset and box sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Body styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #3b82f6;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url("images/cover.jpg") center center / cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+  font-weight: 400;
+  color: #3b82f6;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #111827;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* SKILLS / Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #020617;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    height: 90vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
