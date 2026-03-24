@@ -1,208 +1,91 @@
-/* =========================
-   BASE
-========================= */
+/* SMOOTH GLOBAL */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #e0f2fe, #ffffff);
+  font-family: "Inter", sans-serif;
+  background: #f8fafc;
   color: #0f172a;
   transition: 0.3s;
 }
 
-/* =========================
-   PRELOADER
-========================= */
-#preloader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #020617;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeOut 2s ease forwards;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
-}
-
-/* =========================
-   NAV
-========================= */
+/* NAV */
 .nav {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
+  padding: 18px 50px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.6);
   z-index: 1000;
 }
 
-.nav a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: 500;
-}
-
-.nav a:hover {
-  color: #0ea5e9;
-}
-
-.nav a.active {
-  color: #0ea5e9;
-  border-bottom: 2px solid #0ea5e9;
-}
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 140px 60px 80px;
-  min-height: 100vh;
-}
-
-.hero-content {
-  max-width: 650px;
+  align-items: center;
+  padding: 140px 60px;
 }
 
 .hero h1 {
-  font-size: 54px;
-  margin-bottom: 10px;
+  font-size: 60px;
+  line-height: 1.1;
 }
 
-.hero p {
-  font-size: 18px;
-  color: #475569;
-  line-height: 1.6;
-}
-
-.hero-image img {
-  width: 320px;
-  border-radius: 50%;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.primary {
-  background: #0ea5e9;
-  color: white;
-}
-
-.primary:hover {
-  background: #0284c7;
-}
-
-.secondary {
-  border: 2px solid #0ea5e9;
-  color: #0ea5e9;
-}
-
-.secondary:hover {
-  background: #0ea5e9;
-  color: white;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-.section {
-  padding: 100px 60px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.title {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-/* =========================
-   FILTERS
-========================= */
-.filters {
-  margin-bottom: 20px;
-}
-
+/* FILTER BUTTONS */
 .filters button {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 10px 15px;
+  margin: 5px;
+  padding: 10px 16px;
+  border-radius: 999px;
   border: none;
-  border-radius: 20px;
   cursor: pointer;
   background: #e2e8f0;
   transition: 0.3s;
-  font-weight: 500;
 }
 
+.filters button.active,
 .filters button:hover {
   background: #0ea5e9;
   color: white;
 }
 
-/* =========================
-   GALLERY GRID
-========================= */
+/* GALLERY */
 #gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 20px;
 }
 
-/* PROJECT CARD */
+/* CARD */
 .project-card {
   position: relative;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
 }
 
 .project-card img {
   width: 100%;
-  display: block;
   transition: transform 0.5s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 /* OVERLAY */
 .overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: white;
+  width: 100%;
   padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
   opacity: 0;
   transition: 0.3s;
 }
@@ -211,142 +94,74 @@ body {
   opacity: 1;
 }
 
-.overlay h3 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.overlay p {
-  margin: 5px 0 0;
-  font-size: 12px;
-}
-
-/* =========================
-   CARD / TIMELINE
-========================= */
-.timeline {
-  border-left: 3px solid #0ea5e9;
-  padding-left: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.year {
-  color: #0ea5e9;
-  font-weight: bold;
-}
-
-/* =========================
-   SKILLS
-========================= */
-.skills span {
-  display: inline-block;
-  background: #0ea5e9;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin: 5px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact {
-  text-align: center;
-}
-
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  top: 0;
-  left: 0;
-  z-index: 2000;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  text-align: center;
+  max-width: 700px;
 }
 
 #modal-img {
-  display: block;
-  margin: auto;
   max-width: 80%;
-  margin-top: 5%;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
+#modal-title {
+  color: white;
+  font-size: 28px;
+}
+
+#modal-category {
+  color: #38bdf8;
+}
+
+#modal-desc {
+  color: #cbd5f5;
+}
+
+/* CLOSE */
 #close {
   position: absolute;
   top: 20px;
   right: 40px;
   font-size: 40px;
-  color: white;
   cursor: pointer;
-}
-
-#modal p {
-  color: #cbd5f5;
-  text-align: center;
-  max-width: 600px;
-  margin: auto;
-}
-
-#modal h2 {
   color: white;
-  text-align: center;
-  margin-top: 20px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
+/* CURSOR */
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: #0ea5e9;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* DARK MODE */
 body.dark {
   background: #020617;
   color: white;
 }
 
-body.dark .card {
-  background: #0f172a;
-}
-
 body.dark .nav {
-  background: rgba(15,23,42,0.7);
+  background: rgba(2,6,23,0.7);
 }
 
 body.dark .filters button {
   background: #1e293b;
   color: white;
-}
-
-/* =========================
-   CURSOR
-========================= */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: #0ea5e9;
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
-
-/* =========================
-   THEME BUTTON
-========================= */
-.theme-toggle {
-  margin-left: 10px;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #0ea5e9;
-  background: transparent;
 }
