@@ -1,29 +1,29 @@
-// Smooth scroll
+// FILTER FUNCTION
+function filterSelection(category) {
+  let items = document.getElementsByClassName("item");
+
+  if (category === "all") category = "";
+
+  for (let i = 0; i < items.length; i++) {
+    let el = items[i];
+
+    if (el.className.indexOf(category) > -1) {
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
+  }
+}
+
+// Default = show all
+filterSelection("all");
+
+
+// SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
     document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({
-        behavior: "smooth"
-      });
+      .scrollIntoView({ behavior: "smooth" });
   });
-});
-
-// Fade-in animation on scroll
-const items = document.querySelectorAll('.item');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-});
-
-items.forEach(item => {
-  item.style.opacity = 0;
-  item.style.transform = "translateY(50px)";
-  item.style.transition = "0.5s";
-  observer.observe(item);
 });
