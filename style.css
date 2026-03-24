@@ -2,19 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
 body {
-  color: #fff;
-  background: linear-gradient(135deg, #0ea5e9, #1e3a8a);
+  background: linear-gradient(135deg, #38bdf8, #1e3a8a);
+  color: white;
 }
 
 /* NAV */
 header {
   position: fixed;
   width: 100%;
-  padding: 15px 50px;
+  padding: 15px 40px;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
 }
@@ -36,12 +36,11 @@ nav li {
 /* HERO */
 .hero {
   height: 100vh;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 1s;
 }
 
 .profile {
@@ -51,17 +50,10 @@ nav li {
   border: 3px solid white;
 }
 
-.hero h1 {
-  font-size: 40px;
-}
-
-.hero p {
-  margin: 10px 0;
-}
-
+/* BUTTON */
 .btn {
   padding: 10px 20px;
-  background: #fff;
+  background: white;
   color: #0ea5e9;
   border-radius: 5px;
   text-decoration: none;
@@ -69,83 +61,81 @@ nav li {
 
 /* SECTION */
 .section {
-  padding: 80px 50px;
+  padding: 80px 40px;
 }
 
-/* FILTER */
-.filters button {
-  margin: 5px;
-  padding: 8px 15px;
-  border: none;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
+h2 {
+  margin-bottom: 20px;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 15px;
-  margin-top: 20px;
 }
 
 /* ITEM */
-.item {
-  overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-  transform: scale(0.9);
-  opacity: 0;
-  animation: fadeUp 0.5s forwards;
-}
-
 .item img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
-.item:hover img {
-  transform: scale(1.1);
+.item img:hover {
+  transform: scale(1.05);
+}
+
+/* FILTER */
+.filters button {
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
 }
 
 /* MODAL */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
-  padding-top: 50px;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
 }
 
-.modal-content {
+#modal-img {
   display: block;
   margin: auto;
   max-width: 80%;
+  margin-top: 5%;
 }
 
 #close {
   position: absolute;
+  right: 30px;
   top: 20px;
-  right: 40px;
   font-size: 40px;
   cursor: pointer;
 }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {opacity:0;}
+  to {opacity:1;}
 }
