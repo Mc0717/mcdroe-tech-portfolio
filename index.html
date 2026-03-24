@@ -14,7 +14,6 @@
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -22,97 +21,34 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Graphic Designer</h1>
-  <p>I create clean, modern, and impactful visual designs.</p>
-  <div class="hero-buttons">
-    <a href="#work" class="btn">View Work</a>
-    <a href="assets/resume.pdf" class="btn secondary" download>Download Resume</a>
-  </div>
+  <img src="mcdroe 1x1.png" class="profile">
+  <h1>Mcdroe Erenea</h1>
+  <p>Graphic Designer • Branding • Social Media • Print</p>
+  <a href="#work" class="btn">View My Work</a>
 </section>
 
 <!-- WORK -->
 <section id="work" class="section">
   <h2>Selected Works</h2>
 
-  <!-- FILTER BUTTONS -->
   <div class="filters">
     <button onclick="filterSelection('all')">All</button>
     <button onclick="filterSelection('branding')">Branding</button>
     <button onclick="filterSelection('print')">Print</button>
     <button onclick="filterSelection('social')">Social</button>
-    <button onclick="filterSelection('it')">IT Projects</button>
   </div>
 
-  <div class="grid">
-
-    <!-- BRANDING -->
-    <div class="item branding">
-      <img src="images/branding/gymnastics-logo.jpg">
-    </div>
-
-    <div class="item branding">
-      <img src="images/branding/jiloco-logo.jpg">
-    </div>
-
-    <div class="item branding">
-      <img src="images/branding/mutya-logo.jpg">
-    </div>
-
-    <!-- PRINT -->
-    <div class="item print">
-      <img src="images/print/graduation-program.jpg">
-    </div>
-
-    <div class="item print">
-      <img src="images/print/invitation-birthday.jpg">
-    </div>
-
-    <div class="item print">
-      <img src="images/print/u-week-usa.jpg">
-    </div>
-
-    <!-- SOCIAL -->
-    <div class="item social">
-      <img src="images/social/pnp-fb-post-1.jpg">
-    </div>
-
-    <div class="item social">
-      <img src="images/social/pnp-fb-post-2.jpg">
-    </div>
-
-    <div class="item social">
-      <img src="images/social/pnp-fb-post-3.jpg">
-    </div>
-
-    <!-- IT -->
-    <div class="item it">
-      <img src="images/it/usa-pos-1.jpg">
-    </div>
-
-    <div class="item it">
-      <img src="images/it/usa-pos-2.jpg">
-    </div>
-
-  </div>
+  <div id="gallery" class="grid"></div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
   <h2>About Me</h2>
   <p>
-    I'm Mcdroe Erenea, a graphic designer with experience in branding,
-    social media graphics, and print design. I focus on creating visually
-    engaging designs that communicate clearly and effectively.
+    I’m a graphic designer focused on creating clean, modern, and impactful visuals.
+    From branding to social media and print design, I help bring ideas to life
+    through creative and strategic design.
   </p>
-</section>
-
-<!-- RESUME -->
-<section id="resume" class="section">
-  <h2>Resume & Cover Letter</h2>
-  <div class="buttons">
-    <a href="assets/resume.pdf" class="btn">Resume</a>
-    <a href="assets/cover-letter.pdf" class="btn">Cover Letter</a>
-  </div>
 </section>
 
 <!-- CONTACT -->
@@ -120,12 +56,13 @@
   <h2>Contact</h2>
   <p>Email: mcdroe0717@gmail.com</p>
   <p>Phone: 0956 229 4924</p>
-  <a href="#" class="btn">LinkedIn</a>
 </section>
 
-<footer>
-  <p>© 2026 Mcdroe Erenea</p>
-</footer>
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <span id="close">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
 
 <script src="script.js"></script>
 </body>
