@@ -6,13 +6,24 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
 
+// CLOSE MENU AFTER CLICK
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
+});
+
 // SMOOTH SCROLL
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
+
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
   });
 });
 
@@ -22,20 +33,24 @@ const modalImg = document.querySelector(".modal-content");
 const closeBtn = document.querySelector(".close");
 
 document.querySelectorAll(".project-card img").forEach(img => {
-  img.onclick = () => {
+  img.addEventListener("click", () => {
     modal.style.display = "block";
     modalImg.src = img.src;
-  };
+  });
 });
 
-closeBtn.onclick = () => modal.style.display = "none";
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
-modal.onclick = (e) => {
+modal.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
-};
+});
 
-// AOS INIT
-AOS.init({
-  duration: 1000,
-  once: true
+// AOS INIT (SAFE LOAD)
+window.addEventListener("load", () => {
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
 });
