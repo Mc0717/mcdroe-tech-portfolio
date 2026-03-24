@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mcdroe Erenea | Portfolio</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,18 +15,18 @@
   <h1>Mcdroe Erenea</h1>
 </div>
 
-<!-- CUSTOM CURSOR -->
+<!-- CURSOR -->
 <div class="cursor"></div>
 
 <!-- NAV -->
 <header class="nav">
   <h2>MCDROE ERENEA</h2>
 
-  <div>
+  <div class="nav-links">
     <a href="#work">Work</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
-    <button id="themeToggle" class="theme-toggle">🌙</button>
+    <button id="themeToggle">🌙</button>
   </div>
 </header>
 
@@ -33,58 +34,47 @@
 <section class="hero">
   <div class="hero-content">
     <h1>I Design Clean & Impactful Visual Experiences</h1>
-    <p>Graphic Designer specializing in branding, social media, and visual systems that communicate with clarity and purpose.</p>
+    <p>Graphic Designer specializing in branding, social media, and visual systems.</p>
 
     <div class="hero-buttons">
       <a href="#work" class="btn primary">View Work</a>
       <a href="#contact" class="btn secondary">Hire Me</a>
     </div>
-
-    <p class="social">
-      🔗 <a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank">LinkedIn Profile</a>
-    </p>
   </div>
 
   <div class="hero-image">
-    <img src="mcdroe 1x1.png">
+    <img src="mcdroe 1x1.png" alt="Profile">
   </div>
 </section>
 
-<!-- WORK FILTER -->
+<!-- WORK -->
 <section id="work" class="section">
   <h2 class="title">Projects</h2>
 
   <div class="filters">
-    <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('branding')">Branding</button>
-    <button onclick="filterProjects('it')">IT</button>
-    <button onclick="filterProjects('print')">Print</button>
-    <button onclick="filterProjects('social')">Social</button>
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="Branding">Branding</button>
+    <button data-filter="IT">IT</button>
+    <button data-filter="Print">Print</button>
+    <button data-filter="Social">Social</button>
   </div>
 
-  <div id="gallery" class="gallery"></div>
+  <div id="gallery"></div>
 </section>
 
 <!-- RESUME -->
 <section id="resume" class="section">
-  <h2 class="section-title">🎓 EDUCATION</h2>
+  <h2>Education</h2>
   <div class="card">
     <h3>BS Information Technology</h3>
-    <p>University of San Agustin – Iloilo City</p>
+    <p>University of San Agustin</p>
   </div>
 
-  <h2 class="section-title">💼 EXPERIENCE</h2>
-  <div class="card">
-    <h3>Freelance Graphic Designer</h3>
-    <span>2019 - Present</span>
-  </div>
+  <h2>Experience</h2>
+  <div class="card">Freelance Graphic Designer (2019 - Present)</div>
+  <div class="card">Laboratory Technician (2023 - 2025)</div>
 
-  <div class="card">
-    <h3>Laboratory Technician</h3>
-    <span>2023 - 2025</span>
-  </div>
-
-  <h2 class="section-title">⚡ SKILLS</h2>
+  <h2>Skills</h2>
   <div class="skills">
     <span>Graphic Design</span>
     <span>Branding</span>
@@ -95,23 +85,19 @@
 
 <!-- CONTACT -->
 <section id="contact" class="section contact">
-  <h2 class="title">Let's Work Together</h2>
+  <h2>Contact</h2>
   <p>Email: mcdroe0717@gmail.com</p>
   <p>Phone: 0956 229 4924</p>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank">
-      View Profile
-    </a>
-  </p>
 </section>
 
 <!-- MODAL -->
-<div id="modal" class="modal">
-  <span id="close">&times;</span>
+<div id="modal">
   <div class="modal-content">
+    <span id="close">&times;</span>
     <img id="modal-img">
-    <div id="modal-desc"></div>
+    <h2 id="modal-title"></h2>
+    <span id="modal-category"></span>
+    <p id="modal-desc"></p>
   </div>
 </div>
 
