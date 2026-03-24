@@ -1,132 +1,109 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
+/* GLOBAL */
 body {
   background: linear-gradient(135deg, #e0f2fe, #ffffff);
   color: #0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
 }
 
 /* NAV */
 .nav {
-  position: fixed;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  backdrop-filter: blur(15px);
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile {
-  width: 110px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 /* SECTION */
 .section {
-  padding: 100px 40px;
+  padding: 120px 60px;
 }
 
+/* TITLES */
 .title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* TIMELINE IMPROVED */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(#38bdf8, #0ea5e9);
+}
+
+/* CARD (MAJOR UPGRADE) */
+.card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* YEAR */
+.year {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+/* SKILLS */
+.skills span {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  transform: scale(1.1);
 }
 
 /* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 20px;
-}
-
 .gallery img {
-  width: 100%;
-  border-radius: 20px;
+  border-radius: 18px;
   transition: 0.4s;
-  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* TIMELINE */
-.section-title {
-  font-size: 28px;
-  margin: 60px 0 20px;
-  border-left: 5px solid #38bdf8;
-  padding-left: 10px;
+/* HERO IMPROVE */
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
 }
 
-.timeline {
-  border-left: 3px solid #38bdf8;
-  margin-left: 20px;
-  padding-left: 20px;
+.hero p {
+  font-size: 18px;
+  color: #475569;
 }
 
-.card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.year {
-  font-weight: bold;
-  color: #38bdf8;
-}
-
-/* SKILLS */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skills span {
-  background: #38bdf8;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-}
-
-#modal-img {
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  margin-top: 5%;
-}
-
-#close {
-  position: absolute;
-  right: 30px;
-  top: 20px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
+/* CONTACT */
+#contact p {
+  font-size: 16px;
+  margin: 5px 0;
 }
