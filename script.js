@@ -1,29 +1,65 @@
-// FILTER FUNCTION
-function filterSelection(category) {
-  let items = document.getElementsByClassName("item");
+const gallery = document.getElementById("gallery");
 
-  if (category === "all") category = "";
+// AUTO LOAD IMAGES
+const images = {
+  branding: [
+    "images/branding/gymnastics-logo.jpg",
+    "images/branding/jiloco-logo.jpg",
+    "images/branding/mutya-logo.jpg"
+  ],
+  print: [
+    "images/print/graduation-program.jpg",
+    "images/print/invitation-birthday.jpg",
+    "images/print/u-week-usa.jpg"
+  ],
+  social: [
+    "images/social/pnp-fb-post-1.jpg",
+    "images/social/pnp-fb-post-2.jpg",
+    "images/social/pnp-fb-post-3.jpg",
+    "images/social/pnp-fb-post-4.jpg",
+    "images/social/pnp-fb-post-5.jpg"
+  ]
+};
 
-  for (let i = 0; i < items.length; i++) {
-    let el = items[i];
+function loadImages(filter = "all") {
+  gallery.innerHTML = "";
 
-    if (el.className.indexOf(category) > -1) {
-      el.style.display = "block";
-    } else {
-      el.style.display = "none";
+  for (let category in images) {
+    if (filter === "all" || filter === category) {
+      images[category].forEach(src => {
+        let div = document.createElement("div");
+        div.className = "item";
+
+        let img = document.createElement("img");
+        img.src = src;
+
+        // CLICK = OPEN MODAL
+        img.onclick = () => openModal(src);
+
+        div.appendChild(img);
+        gallery.appendChild(div);
+      });
     }
   }
 }
 
-// Default = show all
-filterSelection("all");
+// FILTER
+function filterSelection(category) {
+  loadImages(category);
+}
 
+// MODAL
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
+function openModal(src) {
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+document.getElementById("close").onclick = function () {
+  modal.style.display = "none";
+};
+
+// INIT LOAD
+loadImages();
