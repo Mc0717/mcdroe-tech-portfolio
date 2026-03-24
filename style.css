@@ -1,8 +1,4 @@
-/* SMOOTH GLOBAL */
-html {
-  scroll-behavior: smooth;
-}
-
+/* GLOBAL */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -17,38 +13,53 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 18px 50px;
+  padding: 15px 40px;
   backdrop-filter: blur(15px);
   background: rgba(255,255,255,0.6);
-  z-index: 1000;
 }
 
 /* HERO */
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 140px 60px;
 }
 
 .hero h1 {
-  font-size: 60px;
-  line-height: 1.1;
+  font-size: 52px;
 }
 
-/* FILTER BUTTONS */
+/* BUTTONS */
+.btn {
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.primary {
+  background: #0ea5e9;
+  color: white;
+}
+
+.secondary {
+  border: 2px solid #0ea5e9;
+  color: #0ea5e9;
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 60px;
+}
+
+/* FILTERS */
 .filters button {
-  margin: 5px;
   padding: 10px 16px;
   border-radius: 999px;
   border: none;
+  margin: 5px;
   cursor: pointer;
-  background: #e2e8f0;
-  transition: 0.3s;
 }
 
-.filters button.active,
-.filters button:hover {
+.filters button.active {
   background: #0ea5e9;
   color: white;
 }
@@ -63,19 +74,18 @@ body {
 /* CARD */
 .project-card {
   position: relative;
-  border-radius: 14px;
   overflow: hidden;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .project-card img {
   width: 100%;
-  transition: transform 0.5s ease;
+  transition: 0.4s;
 }
 
 .project-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* OVERLAY */
@@ -84,7 +94,7 @@ body {
   bottom: 0;
   width: 100%;
   padding: 15px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   color: white;
   opacity: 0;
   transition: 0.3s;
@@ -95,14 +105,13 @@ body {
 }
 
 /* MODAL */
-.modal {
+#modal {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.95);
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .modal-content {
@@ -110,45 +119,20 @@ body {
   max-width: 700px;
 }
 
-#modal-img {
+#modal img {
   max-width: 80%;
   border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-#modal-title {
-  color: white;
-  font-size: 28px;
-}
-
-#modal-category {
-  color: #38bdf8;
-}
-
-#modal-desc {
-  color: #cbd5f5;
-}
-
-/* CLOSE */
-#close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  cursor: pointer;
-  color: white;
 }
 
 /* CURSOR */
 .cursor {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: #0ea5e9;
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 9999;
 }
 
 /* DARK MODE */
@@ -159,9 +143,4 @@ body.dark {
 
 body.dark .nav {
   background: rgba(2,6,23,0.7);
-}
-
-body.dark .filters button {
-  background: #1e293b;
-  color: white;
 }
