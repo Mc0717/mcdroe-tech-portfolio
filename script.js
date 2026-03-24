@@ -6,9 +6,9 @@ const projects = [
   { src: "images/branding/jiloco-logo.jpg", category: "Branding", title: "JILoco Logo", desc: "Minimalist branding focused on clarity and identity." },
   { src: "images/branding/mutya-logo.jpg", category: "Branding", title: "Mutya Logo", desc: "Elegant cultural-inspired logo design." },
 
-  { src: "images/IT/animation-logo.jpg", category: "IT", title: "Animation Logo", desc: "Motion-based logo animation concept." },
-  { src: "images/IT/usa-pos-1.jpg", category: "IT", title: "POS System UI", desc: "User interface for point-of-sale system." },
-  { src: "images/IT/usa-pos-2.jpg", category: "IT", title: "POS Layout Variation", desc: "Improved transaction workflow UI." },
+  { src: "images/it/animation-logo.jpg", category: "IT", title: "Animation Logo", desc: "Motion-based logo animation concept." },
+  { src: "images/it/usa-pos-1.jpg", category: "IT", title: "POS System UI", desc: "User interface for point-of-sale system." },
+  { src: "images/it/usa-pos-2.jpg", category: "IT", title: "POS Layout Variation", desc: "Improved transaction workflow UI." },
 
   { src: "images/print/graduation-program.jpg", category: "Print", title: "Graduation Program", desc: "Formal event layout with structured typography." },
   { src: "images/print/invitation-birthday.jpg", category: "Print", title: "Birthday Invitation", desc: "Creative invitation design with visual balance." },
