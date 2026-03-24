@@ -1,73 +1,128 @@
 const gallery = document.getElementById("gallery");
 
-/* FULL PROJECT DATASET */
+/* FULL PROJECT DATA (ALL YOUR FILES) */
 const projects = [
 
   // BRANDING
-  { src: "images/branding/gymnastics-logo.jpg", cat: "branding", desc: "Gymnastics logo design emphasizing motion, strength, and athletic identity." },
-  { src: "images/branding/jiloco-logo.jpg", cat: "branding", desc: "Modern minimalist logo crafted for brand recognition and simplicity." },
-  { src: "images/branding/mutya-logo.jpg", cat: "branding", desc: "Elegant identity design inspired by cultural and feminine aesthetics." },
+  { src: "images/branding/gymnastics-logo.jpg", category: "Branding", title: "Gymnastics Logo", desc: "Dynamic identity representing strength, motion, and balance." },
+  { src: "images/branding/jiloco-logo.jpg", category: "Branding", title: "JILoco Logo", desc: "Minimalist brand identity with clean typography." },
+  { src: "images/branding/mutya-logo.jpg", category: "Branding", title: "Mutya Logo", desc: "Cultural-inspired logo with elegant styling." },
 
   // IT
-  { src: "images/it/animation-logo.jpg", cat: "it", desc: "Animated logo concept designed for digital presentation and motion branding." },
-  { src: "images/it/usa-pos-1.jpg", cat: "it", desc: "Point-of-sale system interface design (UI layout sample 1)." },
-  { src: "images/it/usa-pos-2.jpg", cat: "it", desc: "Point-of-sale system interface design (UI layout sample 2)." },
+  { src: "images/IT/animation-logo.jpg", category: "IT", title: "Animation Logo", desc: "Motion graphics logo animation concept." },
+  { src: "images/IT/usa-pos-1.jpg", category: "IT", title: "POS UI Design", desc: "Point-of-sale system interface for usability and workflow." },
+  { src: "images/IT/usa-pos-2.jpg", category: "IT", title: "POS UI Variation", desc: "Alternative layout improving transaction flow." },
 
   // PRINT
-  { src: "images/print/graduation-program.jpg", cat: "print", desc: "Graduation program layout combining hierarchy, readability, and formal typography." },
-  { src: "images/print/invitation-birthday.jpg", cat: "print", desc: "Birthday invitation design with balanced composition and festive tone." },
-  { src: "images/print/ligtas-undas-2024-1.jpg", cat: "print", desc: "Ligtas Undas awareness poster design for public safety communication." },
-  { src: "images/print/ligtas-undas-2024-2.jpg", cat: "print", desc: "Complementary poster layout for Ligtas Undas campaign." },
-  { src: "images/print/plaque-1.jpg", cat: "print", desc: "Recognition plaque design with formal typography and layout." },
-   { src: "images/print/sintra-board-1.jpg", cat: "print", desc: "Sintra board layout design for large-format display printing." },
-   { src: "images/print/thank-you-card.jpg", cat: "print", desc: "Thank you card design focused on minimalism and clarity." },
-  { src: "images/print/u-week-usa.jpg", cat: "print", desc: "University Week promotional print design with vibrant layout." },
+  { src: "images/print/graduation-program.jpg", category: "Print", title: "Graduation Program", desc: "Formal printed layout with structured typography." },
+  { src: "images/print/invitation-birthday.jpg", category: "Print", title: "Birthday Invitation", desc: "Creative invitation design with visual hierarchy." },
+  { src: "images/print/ligtas-undas-2024-1.jpg", category: "Print", title: "Ligtas Undas Poster 1", desc: "Public safety awareness print design." },
+  { src: "images/print/ligtas-undas-2024-2.jpg", category: "Print", title: "Ligtas Undas Poster 2", desc: "Complementary campaign visual." },
+  { src: "images/print/plaque-1.jpg", category: "Print", title: "Plaque Design 1", desc: "Recognition plaque layout design." },
+  { src: "images/print/plaque-2.jpg", category: "Print", title: "Plaque Design 2", desc: "Alternate plaque composition." },
+  { src: "images/print/sintra-board-1.jpg", category: "Print", title: "Sintra Board 1", desc: "Large-format print design." },
+  { src: "images/print/sintra-board-2.jpg", category: "Print", title: "Sintra Board 2", desc: "Alternative layout for signage." },
+  { src: "images/print/thank-you-card.jpg", category: "Print", title: "Thank You Card", desc: "Simple and elegant appreciation card design." },
+  { src: "images/print/u-week-usa.jpg", category: "Print", title: "U-Week Poster", desc: "University event promotional material." },
 
   // SOCIAL
-  { src: "images/social/pnp-fb-post-1.jpg", cat: "social", desc: "Facebook post design for promotional or informational campaign." },
-  { src: "images/social/pnp-fb-post-2.jpg", cat: "social", desc: "Social media content layout optimized for engagement and clarity." },
-  { src: "images/social/pnp-fb-post-3.jpg", cat: "social", desc: "Graphic post designed for visual storytelling on social platforms." },
-  { src: "images/social/pnp-fb-post-4.jpg", cat: "social", desc: "Social media visual designed with hierarchy and branding consistency." },
-  { src: "images/social/pnp-fb-post-5.jpg", cat: "social", desc: "Content post optimized for readability and visual balance." },
-  { src: "images/social/pnp-fb-post-6.jpg", cat: "social", desc: "Engagement-focused social media graphic design." },
-  { src: "images/social/pnp-fb-post-7.jpg", cat: "social", desc: "Clean layout post for announcements and digital communication." },
-  { src: "images/social/pnp-fb-post-8.jpg", cat: "social", desc: "Visual content created for consistent branding across posts." },
-  { src: "images/social/pnp-fb-post-9.jpg", cat: "social", desc: "Social post layout emphasizing typography and spacing." },
-  { src: "images/social/pnp-fb-post-10.jpg", cat: "social", desc: "Graphic post designed for public information sharing." },
-  { src: "images/social/pnp-fb-post-11.jpg", cat: "social", desc: "Social media design with strong visual hierarchy." },
-  { src: "images/social/pnp-fb-post-12.jpg", cat: "social", desc: "Final variation of campaign-style social media content." }
+  { src: "images/social/pnp-fb-post-1.jpg", category: "Social", title: "PNP Post 1", desc: "Social media awareness campaign design." },
+  { src: "images/social/pnp-fb-post-2.jpg", category: "Social", title: "PNP Post 2", desc: "Optimized visual for engagement." },
+  { src: "images/social/pnp-fb-post-3.jpg", category: "Social", title: "PNP Post 3", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-4.jpg", category: "Social", title: "PNP Post 4", desc: "Informational post layout." },
+  { src: "images/social/pnp-fb-post-5.jpg", category: "Social", title: "PNP Post 5", desc: "Clean visual hierarchy for readability." },
+  { src: "images/social/pnp-fb-post-6.jpg", category: "Social", title: "PNP Post 6", desc: "Campaign-driven design." },
+  { src: "images/social/pnp-fb-post-7.jpg", category: "Social", title: "PNP Post 7", desc: "Public awareness content design." },
+  { src: "images/social/pnp-fb-post-8.jpg", category: "Social", title: "PNP Post 8", desc: "Visual consistency across posts." },
+  { src: "images/social/pnp-fb-post-9.jpg", category: "Social", title: "PNP Post 9", desc: "Engagement-focused layout." },
+  { src: "images/social/pnp-fb-post-10.jpg", category: "Social", title: "PNP Post 10", desc: "Campaign expansion design." },
+  { src: "images/social/pnp-fb-post-11.jpg", category: "Social", title: "PNP Post 11", desc: "Structured social visual." },
+  { src: "images/social/pnp-fb-post-12.jpg", category: "Social", title: "PNP Post 12", desc: "Final variation in series." }
 
 ];
 
-/* RENDER FUNCTION */
-function render(filter = "all") {
+/* FILTERS */
+const categories = ["all", "Branding", "IT", "Print", "Social"];
+
+const filterContainer = document.createElement("div");
+filterContainer.classList.add("filters");
+
+categories.forEach(cat => {
+  const btn = document.createElement("button");
+  btn.innerText = cat.toUpperCase();
+  btn.onclick = () => renderGallery(cat);
+  filterContainer.appendChild(btn);
+});
+
+document.querySelector("#work").prepend(filterContainer);
+
+/* RENDER GALLERY */
+function renderGallery(filter) {
   gallery.innerHTML = "";
 
-  projects.forEach(p => {
-    if (filter === "all" || p.cat === filter) {
-      let img = document.createElement("img");
-      img.src = p.src;
-      img.onclick = () => openModal(p);
-      gallery.appendChild(img);
-    }
+  const filtered = filter === "all"
+    ? projects
+    : projects.filter(p => p.category === filter);
+
+  filtered.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("project-card");
+
+    const img = document.createElement("img");
+    img.src = p.src;
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.innerHTML = `<h3>${p.title}</h3><p>${p.category}</p>`;
+
+    card.appendChild(img);
+    card.appendChild(overlay);
+
+    /* 3D HOVER EFFECT */
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0) rotateY(0)";
+    });
+
+    card.onclick = () => openModal(p);
+
+    gallery.appendChild(card);
   });
 }
 
-render();
-
-/* FILTER BUTTONS */
-function filterProjects(cat) {
-  render(cat);
-}
+renderGallery("all");
 
 /* MODAL */
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
-const modalDesc = document.getElementById("modal-desc");
+
+const modalTitle = document.createElement("h2");
+const modalCategory = document.createElement("span");
+const modalDesc = document.createElement("p");
+
+modal.appendChild(modalTitle);
+modal.appendChild(modalCategory);
+modal.appendChild(modalDesc);
 
 function openModal(project) {
   modal.style.display = "block";
   modalImg.src = project.src;
+
+  modalTitle.innerText = project.title;
+  modalCategory.innerText = project.category;
   modalDesc.innerText = project.desc;
 }
 
@@ -75,36 +130,15 @@ document.getElementById("close").onclick = () => {
   modal.style.display = "none";
 };
 
-/* DARK MODE */
-document.getElementById("themeToggle").onclick = () => {
-  document.body.classList.toggle("dark");
-};
+/* SCROLL REVEAL */
+const sections = document.querySelectorAll(".section");
 
-/* CUSTOM CURSOR */
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-
-/* ACTIVE NAV */
-const links = document.querySelectorAll(".nav a");
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(sec => {
-    if (scrollY >= sec.offsetTop - 100) {
-      current = sec.id;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
     }
   });
+}, { threshold: 0.1 });
 
-  links.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
+sections.forEach(section => observer.observe(section));
