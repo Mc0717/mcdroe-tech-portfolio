@@ -35,7 +35,33 @@ const projects = [
   { src: "images/social/pnp-fb-post-11.jpg", category: "social" },
   { src: "images/social/pnp-fb-post-12.jpg", category: "social" },
 ];
+/* =========================
+   RENDER GALLERY
+========================= */
+function renderGallery(filter = "all") {
+  gallery.innerHTML = "";
 
+  const filtered = filter === "all"
+    ? projects
+    : projects.filter(p => p.category === filter);
+
+  filtered.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+
+    card.innerHTML = `
+      <img src="${p.src}" alt="${p.title}">
+      <div class="overlay">
+        <h3>${p.title}</h3>
+        <p>${p.category}</p>
+      </div>
+    `;
+
+    card.addEventListener("click", () => openModal(p));
+
+    gallery.appendChild(card);
+  });
+}
 // Create filter buttons
 const categories = ["all", "branding", "it", "print", "social"];
 
