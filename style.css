@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -10,11 +10,13 @@ body {
   color: #fff;
 }
 
+/* NAV */
 header {
   position: fixed;
   width: 100%;
-  background: #020617;
+  background: rgba(2,6,23,0.9);
   padding: 15px 50px;
+  z-index: 1000;
 }
 
 nav {
@@ -37,16 +39,17 @@ nav a {
   text-decoration: none;
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 50px;
+  padding: 0 50px;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .hero p {
@@ -54,38 +57,91 @@ nav a {
   color: #94a3b8;
 }
 
+.hero-buttons {
+  margin-top: 20px;
+}
+
+/* BUTTON */
 .btn {
-  background: #38bdf8;
+  display: inline-block;
+  margin-right: 10px;
   padding: 10px 20px;
+  background: #38bdf8;
   color: #000;
   text-decoration: none;
-  width: fit-content;
   border-radius: 5px;
 }
 
+.btn.secondary {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* SECTION */
 .section {
   padding: 100px 50px;
 }
 
-.skills-container span {
-  display: inline-block;
-  background: #1e293b;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
+.section h2 {
+  margin-bottom: 20px;
 }
 
-.project {
-  background: #1e293b;
-  padding: 20px;
-  margin-top: 10px;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* PROJECT ITEM */
+.item {
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
 }
 
-/* Mobile */
+.item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  padding: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+/* CONTACT BUTTONS */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .hero {
     padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
   }
 
   nav ul {
