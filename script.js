@@ -6,9 +6,9 @@ const projects = [
   { src: "images/branding/jiloco-logo.jpg", category: "branding" },
   { src: "images/branding/mutya-logo.jpg", category: "branding" },
 
-  { src: "images/IT/animation-logo.jpg", category: "it" },
-  { src: "images/IT/usa-pos-1.jpg", category: "it" },
-  { src: "images/IT/usa-pos-2.jpg", category: "it" },
+  { src: "images/it/animation-logo.jpg", category: "it" },
+  { src: "images/it/usa-pos-1.jpg", category: "it" },
+  { src: "images/it/usa-pos-2.jpg", category: "it" },
 
   { src: "images/print/graduation-program.jpg", category: "print" },
   { src: "images/print/invitation-birthday.jpg", category: "print" },
