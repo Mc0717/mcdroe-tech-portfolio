@@ -1,10 +1,8 @@
-/* GLOBAL */
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #f8fafc;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f2fe, #ffffff);
   color: #0f172a;
-  transition: 0.3s;
 }
 
 /* NAV */
@@ -14,25 +12,65 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #0ea5e9;
 }
 
 /* HERO */
 .hero {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 140px 60px;
+  padding: 140px 60px 80px;
+  min-height: 100vh;
+}
+
+.hero-content {
+  max-width: 650px;
 }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 54px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #0ea5e9;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.hero-image img {
+  width: 320px;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* BUTTONS */
 .btn {
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 8px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
 .primary {
@@ -40,9 +78,18 @@ body {
   color: white;
 }
 
+.primary:hover {
+  background: #0284c7;
+}
+
 .secondary {
   border: 2px solid #0ea5e9;
   color: #0ea5e9;
+}
+
+.secondary:hover {
+  background: #0ea5e9;
+  color: white;
 }
 
 /* SECTIONS */
@@ -50,97 +97,98 @@ body {
   padding: 100px 60px;
 }
 
-/* FILTERS */
-.filters button {
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: none;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.filters button.active {
-  background: #0ea5e9;
-  color: white;
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
 /* GALLERY */
-#gallery {
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 20px;
 }
 
-/* CARD */
-.project-card {
-  position: relative;
-  overflow: hidden;
+.gallery img {
+  width: 100%;
   border-radius: 12px;
   cursor: pointer;
-}
-
-.project-card img {
-  width: 100%;
   transition: 0.4s;
 }
 
-.project-card:hover img {
-  transform: scale(1.1);
+.gallery img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+/* TIMELINE */
+.timeline {
+  border-left: 3px solid #0ea5e9;
+  padding-left: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.year {
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #0ea5e9;
   color: white;
-  opacity: 0;
-  transition: 0.3s;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 14px;
 }
 
-.project-card:hover .overlay {
-  opacity: 1;
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+/* SOCIAL */
+.social {
+  margin-top: 15px;
+}
+
+.social a {
+  color: #0ea5e9;
+  text-decoration: none;
 }
 
 /* MODAL */
-#modal {
+.modal {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  top: 0;
+  left: 0;
 }
 
-.modal-content {
-  text-align: center;
-  max-width: 700px;
-}
-
-#modal img {
+#modal-img {
+  display: block;
+  margin: auto;
   max-width: 80%;
-  border-radius: 10px;
+  margin-top: 5%;
 }
 
-/* CURSOR */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: #0ea5e9;
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-}
-
-/* DARK MODE */
-body.dark {
-  background: #020617;
+#close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
   color: white;
-}
-
-body.dark .nav {
-  background: rgba(2,6,23,0.7);
+  cursor: pointer;
 }
