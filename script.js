@@ -1,83 +1,105 @@
-// Hamburger menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+// =========================
+// MOBILE NAV TOGGLE
+// =========================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  navLinks.classList.toggle('show');
-});
-
-// Fade-in sections on scroll
-const faders = document.querySelectorAll('.fade-in-section');
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // Remove once shown for performance
-      }
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
     });
-  },
-  { threshold: 0.3 }
-);
-faders.forEach(fade => observer.observe(fade));
-
-// Modal Lightbox Gallery
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const captionText = document.getElementById("caption");
-const images = Array.from(document.querySelectorAll(".project-image"));
-const closeBtn = document.querySelector(".close");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-let currentIndex = 0;
-
-// Open modal with image
-function openModal(index) {
-  modal.style.display = "block";
-  modalImg.src = images[index].src;
-  captionText.innerText = images[index].alt;
-  currentIndex = index;
 }
 
-// Event: click on image
-images.forEach((img, i) => {
-  img.addEventListener("click", () => openModal(i));
+// =========================
+// SMOOTH SCROLL (for nav links)
+// =========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        // Close menu on mobile
+        navLinks.classList.remove("show");
+    });
+});
+
+// =========================
+// FADE-IN ON SCROLL
+// =========================
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.classList.add("show");
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+    section.classList.add("fade-in-section");
+    observer.observe(section);
+});
+
+// =========================
+// IMAGE LIGHTBOX (CLICK PROJECT)
+// =========================
+const modal = document.createElement("div");
+modal.classList.add("modal");
+
+modal.innerHTML = `
+    <span class="close">&times;</span>
+    <img class="modal-content">
+`;
+
+document.body.appendChild(modal);
+
+const modalImg = modal.querySelector(".modal-content");
+const closeBtn = modal.querySelector(".close");
+
+// Open modal
+document.querySelectorAll(".project-card img").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
 });
 
 // Close modal
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
-// Close modal on outside click
-window.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};
-// Keyboard support for modal
-window.addEventListener('keydown', (e) => {
-  if (modal.style.display === 'block') {
-    if (e.key === 'Escape') {
-      modal.style.display = 'none';
-    } else if (e.key === 'ArrowLeft') {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      openModal(currentIndex);
-    } else if (e.key === 'ArrowRight') {
-      currentIndex = (currentIndex + 1) % images.length;
-      openModal(currentIndex);
-    }
-  }
-});
+closeBtn.onclick = () => modal.style.display = "none";
 
-// Prev/Next buttons
-prevBtn.onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  openModal(currentIndex);
+// Close when clicking outside
+modal.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 };
-nextBtn.onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  openModal(currentIndex);
-};
+
+// =========================
+// ACTIVE NAV LINK ON SCROLL
+// =========================
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    document.querySelectorAll("section").forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navItems.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
