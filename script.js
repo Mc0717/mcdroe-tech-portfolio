@@ -1,4 +1,5 @@
 const gallery = document.getElementById("gallery");
+const preview = document.getElementById("preview-gallery");
 
 const images = [
   "images/branding/gymnastics-logo.jpg",
@@ -6,19 +7,24 @@ const images = [
   "images/branding/mutya-logo.jpg",
   "images/print/graduation-program.jpg",
   "images/print/invitation-birthday.jpg",
-  "images/print/u-week-usa.jpg",
   "images/social/pnp-fb-post-1.jpg",
-  "images/social/pnp-fb-post-2.jpg",
-  "images/social/pnp-fb-post-3.jpg",
-  "images/social/pnp-fb-post-4.jpg"
+  "images/social/pnp-fb-post-2.jpg"
 ];
 
-// LOAD IMAGES
-images.forEach(src => {
+// LOAD ALL
+images.forEach((src, index) => {
   let img = document.createElement("img");
   img.src = src;
   img.onclick = () => openModal(src);
   gallery.appendChild(img);
+
+  // FIRST 4 = FEATURED
+  if (index < 4) {
+    let pimg = document.createElement("img");
+    pimg.src = src;
+    pimg.onclick = () => openModal(src);
+    preview.appendChild(pimg);
+  }
 });
 
 // MODAL
@@ -33,23 +39,3 @@ function openModal(src) {
 document.getElementById("close").onclick = () => {
   modal.style.display = "none";
 };
-
-// SCROLL REVEAL
-const reveals = document.querySelectorAll(".card, .gallery img");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    let top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    }
-  });
-});
-
-// INITIAL STATE
-reveals.forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(40px)";
-  el.style.transition = "0.6s ease";
-});
