@@ -1,8 +1,11 @@
 const gallery = document.getElementById("gallery");
 
+/* =========================
+   PROJECT DATA
+========================= */
 const projects = [
   // BRANDING
- { src: "images/branding/gymnastics-logo.jpg", category: "Branding", title: "Gymnastics Logo", desc: "Dynamic identity representing strength, motion, and balance." },
+  { src: "images/branding/gymnastics-logo.jpg", category: "Branding", title: "Gymnastics Logo", desc: "Dynamic identity representing strength, motion, and balance." },
   { src: "images/branding/jiloco-logo.jpg", category: "Branding", title: "JILoco Logo", desc: "Minimalist brand identity with clean typography." },
   { src: "images/branding/mutya-logo.jpg", category: "Branding", title: "Mutya Logo", desc: "Cultural-inspired logo with elegant styling." },
 
@@ -12,7 +15,7 @@ const projects = [
   { src: "images/it/usa-pos-2.jpg", category: "IT", title: "POS UI Variation", desc: "Alternative layout improving transaction flow." },
 
   // PRINT
- { src: "images/print/graduation-program.jpg", category: "Print", title: "Graduation Program", desc: "Formal printed layout with structured typography." },
+  { src: "images/print/graduation-program.jpg", category: "Print", title: "Graduation Program", desc: "Formal printed layout with structured typography." },
   { src: "images/print/invitation-birthday.jpg", category: "Print", title: "Birthday Invitation", desc: "Creative invitation design with visual hierarchy." },
   { src: "images/print/ligtas-undas-2024-1.jpg", category: "Print", title: "Ligtas Undas Poster 1", desc: "Public safety awareness print design." },
   { src: "images/print/ligtas-undas-2024-2.jpg", category: "Print", title: "Ligtas Undas Poster 2", desc: "Complementary campaign visual." },
@@ -22,19 +25,20 @@ const projects = [
   { src: "images/print/u-week-usa.jpg", category: "Print", title: "U-Week Poster", desc: "University event promotional material." },
 
   // SOCIAL
-{ src: "images/social/pnp-fb-post-1.jpg", category: "Social", title: "PNP Post Series", desc: "Social media awareness campaign design." },
-  { src: "images/social/pnp-fb-post-2.jpg", category: "Social", title: "PNP Post Series", desc: "Consistent branding for social media." }
-  { src: "images/social/pnp-fb-post-3.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-4.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-5.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-6.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-7.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-8.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-9.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-10.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-11.jpg", category: "social" },
-  { src: "images/social/pnp-fb-post-12.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-1.jpg", category: "Social", title: "PNP Post 1", desc: "Social media awareness campaign design." },
+  { src: "images/social/pnp-fb-post-2.jpg", category: "Social", title: "PNP Post 2", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-3.jpg", category: "Social", title: "PNP Post 3", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-4.jpg", category: "Social", title: "PNP Post 4", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-5.jpg", category: "Social", title: "PNP Post 5", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-6.jpg", category: "Social", title: "PNP Post 6", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-7.jpg", category: "Social", title: "PNP Post 7", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-8.jpg", category: "Social", title: "PNP Post 8", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-9.jpg", category: "Social", title: "PNP Post 9", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-10.jpg", category: "Social", title: "PNP Post 10", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-11.jpg", category: "Social", title: "PNP Post 11", desc: "Consistent branding for social media." },
+  { src: "images/social/pnp-fb-post-12.jpg", category: "Social", title: "PNP Post 12", desc: "Consistent branding for social media." }
 ];
+
 /* =========================
    RENDER GALLERY
 ========================= */
@@ -50,7 +54,7 @@ function renderGallery(filter = "all") {
     card.className = "project-card";
 
     card.innerHTML = `
-      <img src="${p.src}" alt="${p.title}">
+      <img src="${p.src}" alt="${p.title}" loading="lazy">
       <div class="overlay">
         <h3>${p.title}</h3>
         <p>${p.category}</p>
@@ -58,53 +62,73 @@ function renderGallery(filter = "all") {
     `;
 
     card.addEventListener("click", () => openModal(p));
-
     gallery.appendChild(card);
   });
 }
-// Create filter buttons
-const categories = ["all", "branding", "it", "print", "social"];
 
-const filterContainer = document.createElement("div");
-filterContainer.classList.add("filters");
+/* =========================
+   FILTER BUTTONS
+========================= */
+const filterButtons = document.querySelectorAll(".filters button");
 
-categories.forEach(cat => {
-  let btn = document.createElement("button");
-  btn.innerText = cat.toUpperCase();
-  btn.onclick = () => renderGallery(cat);
-  filterContainer.appendChild(btn);
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+
+    renderGallery(filter);
+
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
 });
 
-document.querySelector("#work").prepend(filterContainer);
-
-// Render gallery
-function renderGallery(filter) {
-  gallery.innerHTML = "";
-
-  const filtered = filter === "all"
-    ? projects
-    : projects.filter(p => p.category === filter);
-
-  filtered.forEach(p => {
-    let img = document.createElement("img");
-    img.src = p.src;
-    img.onclick = () => openModal(p.src);
-    gallery.appendChild(img);
-  });
-}
-
-// Default load
-renderGallery("all");
-
-// MODAL
+/* =========================
+   MODAL
+========================= */
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalCategory = document.getElementById("modal-category");
+const modalDesc = document.getElementById("modal-desc");
 
-function openModal(src) {
-  modal.style.display = "block";
-  modalImg.src = src;
+function openModal(project) {
+  modal.style.display = "flex";
+
+  modalImg.src = project.src;
+  modalTitle.textContent = project.title;
+  modalCategory.textContent = project.category;
+  modalDesc.textContent = project.desc;
 }
 
 document.getElementById("close").onclick = () => {
   modal.style.display = "none";
 };
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+/* =========================
+   CURSOR
+========================= */
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+/* =========================
+   DARK MODE
+========================= */
+const toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+
+/* =========================
+   INIT
+========================= */
+renderGallery("all");
