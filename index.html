@@ -3,106 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mcdroe Erenea | Portfolio</title>
+  <title>Mcdroe Erenea</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <nav>
-    <h2>Mcdroe</h2>
-    <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="nav">
+  <h2>Mcdroe</h2>
+  <div>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <img src="mcdroe 1x1.png" class="profile">
-  <h1>Mcdroe Erenea</h1>
-  <p>Graphic Designer • Branding • Social Media • Print</p>
-  <a href="#work" class="btn">View My Work</a>
+  <h1 class="fade">Mcdroe Erenea</h1>
+  <p class="fade delay">Graphic Designer crafting clean visual experiences.</p>
 </section>
 
 <!-- WORK -->
-<section id="work" class="section">
-  <h2>Selected Works</h2>
-
-  <div class="filters">
-    <button onclick="filterSelection('all')">All</button>
-    <button onclick="filterSelection('branding')">Branding</button>
-    <button onclick="filterSelection('print')">Print</button>
-    <button onclick="filterSelection('social')">Social</button>
-  </div>
-
-  <div id="gallery" class="grid"></div>
+<section id="work" class="work">
+  <h2 class="title">Selected Work</h2>
+  <div id="gallery" class="gallery"></div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section reveal">
-  <h2>Introduction</h2>
+<section id="about" class="about">
+  <h2>About</h2>
   <p>
-    Dynamic and detail-oriented Graphic Designer with strong experience in digital and print design.
-    Skilled in creating visually compelling materials and delivering high-quality outputs that meet branding goals.
-  </p>
-</section>
-
-<!-- RESUME -->
-<section id="resume" class="section reveal">
-  <h2>Resume</h2>
-
-  <h3>Education Background</h3>
-  <p>Bachelor of Science in Information Technology</p>
-  <p>University of San Agustin – Iloilo City</p>
-
-  <h3>Working Experience</h3>
-  <ul>
-    <li><strong>Freelance Graphic Designer</strong> (2019 – Present)</li>
-    <li><strong>Laboratory Technician</strong> (2023 – 2025)</li>
-    <li><strong>IT Technical Assistant</strong> (2021 – 2023)</li>
-  </ul>
-
-  <h3>Skill & Expertise</h3>
-  <ul>
-    <li>Graphic Design (Photoshop, Canva)</li>
-    <li>Social Media Graphics</li>
-    <li>Print Design</li>
-    <li>Layout & Typography</li>
-    <li>Basic Web Design</li>
-  </ul>
-
-  <h3>Previous Projects</h3>
-  <ul>
-    <li>USA Cafeteria POS System</li>
-    <li>School Logos & Branding</li>
-    <li>Tarpaulin & Event Designs</li>
-    <li>Social Media Campaign Graphics</li>
-  </ul>
-
-  <h3>Tools & Apps</h3>
-  <p>Adobe Photoshop, Canva, After Effects, NetBeans</p>
-</section>
-
-<!-- COVER LETTER -->
-<section class="section reveal">
-  <h2>Cover Letter</h2>
-  <p>
-    I am a passionate Graphic Designer with a strong foundation in both creative and technical fields.
-    With years of experience in freelance design and IT support, I bring a unique combination of
-    problem-solving and visual storytelling. I am eager to contribute my skills in creating impactful
-    and engaging designs that align with your brand and vision.
+    I design visual systems that communicate clearly and beautifully.
+    My work spans branding, print, and digital media — combining creativity
+    with purpose.
   </p>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section reveal">
+<section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Email: mcdroe0717@gmail.com</p>
-  <p>Phone: 0956 229 4924</p>
+  <p>mcdroe0717@gmail.com</p>
 </section>
 
 <!-- MODAL -->
