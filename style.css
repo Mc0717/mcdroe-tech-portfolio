@@ -73,6 +73,27 @@ body {
   transition: 0.3s;
 }
 
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #e2e8f0;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.filters button:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
 .primary {
   background: #0ea5e9;
   color: white;
