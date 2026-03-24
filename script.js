@@ -1,6 +1,6 @@
 const gallery = document.getElementById("gallery");
 
-// AUTO LOAD IMAGES
+// ALL IMAGES AUTO GROUPED
 const images = {
   branding: [
     "images/branding/gymnastics-logo.jpg",
@@ -17,23 +17,23 @@ const images = {
     "images/social/pnp-fb-post-2.jpg",
     "images/social/pnp-fb-post-3.jpg",
     "images/social/pnp-fb-post-4.jpg",
-    "images/social/pnp-fb-post-5.jpg"
+    "images/social/pnp-fb-post-5.jpg",
+    "images/social/pnp-fb-post-6.jpg",
+    "images/social/pnp-fb-post-7.jpg"
   ]
 };
 
-function loadImages(filter = "all") {
+function loadImages(filter="all"){
   gallery.innerHTML = "";
 
-  for (let category in images) {
-    if (filter === "all" || filter === category) {
+  for(let category in images){
+    if(filter === "all" || filter === category){
       images[category].forEach(src => {
         let div = document.createElement("div");
         div.className = "item";
 
         let img = document.createElement("img");
         img.src = src;
-
-        // CLICK = OPEN MODAL
         img.onclick = () => openModal(src);
 
         div.appendChild(img);
@@ -43,23 +43,32 @@ function loadImages(filter = "all") {
   }
 }
 
-// FILTER
-function filterSelection(category) {
-  loadImages(category);
+function filterSelection(cat){
+  loadImages(cat);
 }
 
 // MODAL
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 
-function openModal(src) {
+function openModal(src){
   modal.style.display = "block";
   modalImg.src = src;
 }
 
-document.getElementById("close").onclick = function () {
+document.getElementById("close").onclick = () => {
   modal.style.display = "none";
 };
 
-// INIT LOAD
+// SCROLL ANIMATION
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    let top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
+
+// INIT
 loadImages();
