@@ -99,24 +99,46 @@ body {
 
 .title {
   font-size: 32px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #e2e8f0;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.filters button:hover {
+  background: #0ea5e9;
+  color: white;
 }
 
 /* GALLERY */
-.gallery {
+#gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 20px;
 }
 
-.gallery img {
+#gallery img {
   width: 100%;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.4s;
 }
 
-.gallery img:hover {
+#gallery img:hover {
   transform: scale(1.06);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
@@ -148,22 +170,11 @@ body {
   padding: 8px 15px;
   border-radius: 20px;
   margin: 5px;
-  font-size: 14px;
 }
 
 /* CONTACT */
 .contact {
   text-align: center;
-}
-
-/* SOCIAL */
-.social {
-  margin-top: 15px;
-}
-
-.social a {
-  color: #0ea5e9;
-  text-decoration: none;
 }
 
 /* MODAL */
