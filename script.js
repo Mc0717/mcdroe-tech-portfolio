@@ -27,16 +27,16 @@ const projects = [
   // SOCIAL
   { src: "images/social/pnp-fb-post-1.jpg", category: "Social", title: "PNP Post Series", desc: "Social media awareness campaign design." },
   { src: "images/social/pnp-fb-post-2.jpg", category: "Social", title: "PNP Post Series", desc: "Consistent branding for social media." },
-  { src: "images/social/pnp-fb-post-3.jpg", category: "Social", title: "PNP Post 3", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-4.jpg", category: "Social", title: "PNP Post 4", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-5.jpg", category: "Social", title: "PNP Post 5", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-6.jpg", category: "Social", title: "PNP Post 6", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-7.jpg", category: "Social", title: "PNP Post 7", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-8.jpg", category: "Social", title: "PNP Post 8", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-9.jpg", category: "Social", title: "PNP Post 9", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-10.jpg", category: "Social", title: "PNP Post 10", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-11.jpg", category: "Social", title: "PNP Post 11", desc: "Social content design." },
-  { src: "images/social/pnp-fb-post-12.jpg", category: "Social", title: "PNP Post 12", desc: "Social content design." }
+{ src: "images/social/pnp-fb-post-3.jpg", category: "Social", title: "PNP Post 3", desc: "Public safety awareness visual focused on community vigilance and crime prevention messaging." },
+{ src: "images/social/pnp-fb-post-4.jpg", category: "Social", title: "PNP Post 4", desc: "Informational campaign design highlighting emergency response and preparedness guidelines." },
+{ src: "images/social/pnp-fb-post-5.jpg", category: "Social", title: "PNP Post 5", desc: "Social media content emphasizing law enforcement visibility and public trust communication." },
+{ src: "images/social/pnp-fb-post-6.jpg", category: "Social", title: "PNP Post 6", desc: "Awareness post promoting safety practices and community cooperation initiatives." },
+{ src: "images/social/pnp-fb-post-7.jpg", category: "Social", title: "PNP Post 7", desc: "Campaign visual designed to educate the public on proper reporting and response procedures." },
+{ src: "images/social/pnp-fb-post-8.jpg", category: "Social", title: "PNP Post 8", desc: "Graphic content focused on reinforcing discipline, order, and civic responsibility." },
+{ src: "images/social/pnp-fb-post-9.jpg", category: "Social", title: "PNP Post 9", desc: "Public service announcement layout promoting awareness and community engagement." },
+{ src: "images/social/pnp-fb-post-10.jpg", category: "Social", title: "PNP Post 10", desc: "Social post design highlighting safety reminders and proactive prevention strategies." },
+{ src: "images/social/pnp-fb-post-11.jpg", category: "Social", title: "PNP Post 11", desc: "Visual communication piece supporting government outreach and information dissemination." },
+{ src: "images/social/pnp-fb-post-12.jpg", category: "Social", title: "PNP Post 12", desc: "Final series post reinforcing consistent branding and unified messaging for the campaign." }
 ];
 
 /* =========================
