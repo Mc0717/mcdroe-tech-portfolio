@@ -1,5 +1,4 @@
 const gallery = document.getElementById("gallery");
-const preview = document.getElementById("preview-gallery");
 
 const images = [
   "images/branding/gymnastics-logo.jpg",
@@ -11,20 +10,11 @@ const images = [
   "images/social/pnp-fb-post-2.jpg"
 ];
 
-// LOAD ALL
-images.forEach((src, index) => {
+images.forEach((src) => {
   let img = document.createElement("img");
   img.src = src;
   img.onclick = () => openModal(src);
   gallery.appendChild(img);
-
-  // FIRST 4 = FEATURED
-  if (index < 4) {
-    let pimg = document.createElement("img");
-    pimg.src = src;
-    pimg.onclick = () => openModal(src);
-    preview.appendChild(pimg);
-  }
 });
 
 // MODAL
