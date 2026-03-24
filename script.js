@@ -1,91 +1,84 @@
 const gallery = document.getElementById("gallery");
 
-/* PROJECT DATA */
 const projects = [
-  { src: "images/branding/gymnastics-logo.jpg", category: "Branding", title: "Gymnastics Logo", desc: "Strength, motion, and balance identity." },
-  { src: "images/branding/jiloco-logo.jpg", category: "Branding", title: "JILoco Logo", desc: "Minimalist brand identity." },
-  { src: "images/branding/mutya-logo.jpg", category: "Branding", title: "Mutya Logo", desc: "Cultural-inspired design." },
+  // BRANDING
+  { src: "images/branding/gymnastics-logo.jpg", category: "branding" },
+  { src: "images/branding/jiloco-logo.jpg", category: "branding" },
+  { src: "images/branding/mutya-logo.jpg", category: "branding" },
 
-  { src: "images/it/animation-logo.jpg", category: "IT", title: "Animation Logo", desc: "Motion logo concept." },
-  { src: "images/it/usa-pos-1.jpg", category: "IT", title: "POS UI", desc: "User-friendly POS interface." },
-  { src: "images/it/usa-pos-2.jpg", category: "IT", title: "POS UI Variant", desc: "Improved layout flow." },
+  // IT
+  { src: "images/it/animation-logo.jpg", category: "it" },
+  { src: "images/it/usa-pos-1.jpg", category: "it" },
+  { src: "images/it/usa-pos-2.jpg", category: "it" },
 
-  { src: "images/print/graduation-program.jpg", category: "Print", title: "Graduation Program", desc: "Formal layout design." },
-  { src: "images/print/invitation-birthday.jpg", category: "Print", title: "Birthday Invitation", desc: "Event invitation design." },
+  // PRINT
+  { src: "images/print/graduation-program.jpg", category: "print" },
+  { src: "images/print/invitation-birthday.jpg", category: "print" },
+  { src: "images/print/ligtas-undas-2024-1.jpg", category: "print" },
+  { src: "images/print/ligtas-undas-2024-2.jpg", category: "print" },
+  { src: "images/print/plaque-1.jpg", category: "print" },
+  { src: "images/print/sintra-board-1.jpg", category: "print" },
+  { src: "images/print/thank-you-card.jpg", category: "print" },
+  { src: "images/print/u-week-usa.jpg", category: "print" },
 
-  { src: "images/social/pnp-fb-post-1.jpg", category: "Social", title: "PNP Post", desc: "Campaign design series." },
-  { src: "images/social/pnp-fb-post-2.jpg", category: "Social", title: "PNP Post", desc: "Consistent branding." }
+  // SOCIAL
+  { src: "images/social/pnp-fb-post-1.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-2.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-3.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-4.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-5.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-6.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-7.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-8.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-9.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-10.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-11.jpg", category: "social" },
+  { src: "images/social/pnp-fb-post-12.jpg", category: "social" },
 ];
 
-/* RENDER */
-function render(filter = "all") {
+// Create filter buttons
+const categories = ["all", "branding", "it", "print", "social"];
+
+const filterContainer = document.createElement("div");
+filterContainer.classList.add("filters");
+
+categories.forEach(cat => {
+  let btn = document.createElement("button");
+  btn.innerText = cat.toUpperCase();
+  btn.onclick = () => renderGallery(cat);
+  filterContainer.appendChild(btn);
+});
+
+document.querySelector("#work").prepend(filterContainer);
+
+// Render gallery
+function renderGallery(filter) {
   gallery.innerHTML = "";
 
-  const data = filter === "all"
+  const filtered = filter === "all"
     ? projects
     : projects.filter(p => p.category === filter);
 
-  data.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "project-card";
-
-    card.innerHTML = `
-      <img src="${p.src}" loading="lazy">
-      <div class="overlay">
-        <h3>${p.title}</h3>
-        <p>${p.category}</p>
-      </div>
-    `;
-
-    card.onclick = () => openModal(p);
-    gallery.appendChild(card);
+  filtered.forEach(p => {
+    let img = document.createElement("img");
+    img.src = p.src;
+    img.onclick = () => openModal(p.src);
+    gallery.appendChild(img);
   });
 }
 
-/* FILTER */
-const buttons = document.querySelectorAll(".filters button");
+// Default load
+renderGallery("all");
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    render(btn.dataset.filter);
-  });
-});
-
-/* MODAL */
+// MODAL
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
-const modalTitle = document.getElementById("modal-title");
-const modalCategory = document.getElementById("modal-category");
-const modalDesc = document.getElementById("modal-desc");
 
-function openModal(p) {
-  modal.style.display = "flex";
-  modalImg.src = p.src;
-  modalTitle.textContent = p.title;
-  modalCategory.textContent = p.category;
-  modalDesc.textContent = p.desc;
+function openModal(src) {
+  modal.style.display = "block";
+  modalImg.src = src;
 }
 
-document.getElementById("close").onclick = () => modal.style.display = "none";
-
-modal.onclick = (e) => {
-  if (e.target === modal) modal.style.display = "none";
+document.getElementById("close").onclick = () => {
+  modal.style.display = "none";
 };
-
-/* CURSOR */
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-
-/* DARK MODE */
-document.getElementById("themeToggle").onclick = () => {
-  document.body.classList.toggle("dark");
-};
-
-/* INIT */
-render();
