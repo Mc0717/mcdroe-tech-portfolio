@@ -9,7 +9,8 @@ const images = [
   "images/print/u-week-usa.jpg",
   "images/social/pnp-fb-post-1.jpg",
   "images/social/pnp-fb-post-2.jpg",
-  "images/social/pnp-fb-post-3.jpg"
+  "images/social/pnp-fb-post-3.jpg",
+  "images/social/pnp-fb-post-4.jpg"
 ];
 
 // LOAD IMAGES
