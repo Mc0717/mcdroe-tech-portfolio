@@ -6,93 +6,91 @@
 <title>Mcdroe Erenea | Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- PRELOADER -->
+<div id="preloader">
+  <h1>Mcdroe Erenea</h1>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- NAV -->
 <header class="nav">
-  <h2 class="logo">PORTFOLIO</h2>
-  <div class="nav-links">
+  <h2>MCDROE ERENEA</h2>
+
+  <div>
     <a href="#work">Work</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
-
+    <button id="themeToggle" class="theme-toggle">🌙</button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Mcdroe Erenea</h1>
-    <h2 class="subtitle">Graphic Designer & IT Support Specialist</h2>
-
-    <p>
-      I design clean, modern, and impactful visual experiences focused on branding,
-      social media, and digital content that communicates clearly and effectively.
-    </p>
+    <h1>I Design Clean & Impactful Visual Experiences</h1>
+    <p>Graphic Designer specializing in branding, social media, and visual systems that communicate with clarity and purpose.</p>
 
     <div class="hero-buttons">
       <a href="#work" class="btn primary">View Work</a>
       <a href="#contact" class="btn secondary">Hire Me</a>
     </div>
 
+    <p class="social">
+      🔗 <a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank">LinkedIn Profile</a>
+    </p>
   </div>
 
   <div class="hero-image">
-    <img src="mcdroe 1x1.png" alt="Profile">
+    <img src="mcdroe 1x1.png">
   </div>
 </section>
 
-<!-- WORK -->
+<!-- WORK FILTER -->
 <section id="work" class="section">
   <h2 class="title">Projects</h2>
-  <div id="gallery"></div>
+
+  <div class="filters">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('branding')">Branding</button>
+    <button onclick="filterProjects('it')">IT</button>
+    <button onclick="filterProjects('print')">Print</button>
+    <button onclick="filterProjects('social')">Social</button>
+  </div>
+
+  <div id="gallery" class="gallery"></div>
 </section>
 
 <!-- RESUME -->
 <section id="resume" class="section">
-
   <h2 class="section-title">🎓 EDUCATION</h2>
-  <div class="timeline">
-    <div class="card">
-      <span class="year">2020 - Present</span>
-      <h3>BS Information Technology</h3>
-      <p>University of San Agustin – Iloilo City</p>
-    </div>
+  <div class="card">
+    <h3>BS Information Technology</h3>
+    <p>University of San Agustin – Iloilo City</p>
   </div>
 
   <h2 class="section-title">💼 EXPERIENCE</h2>
-  <div class="timeline">
-    <div class="card">
-      <span class="year">2019 - Present</span>
-      <h3>Freelance Graphic Designer</h3>
-    </div>
-    <div class="card">
-      <span class="year">2023 - 2025</span>
-      <h3>Laboratory Technician</h3>
-    </div>
-    <div class="card">
-      <span class="year">Internship</span>
-      <h3>AG Web Services</h3>
-      <p>Website maintenance, web development, and design support.</p>
-    </div>
+  <div class="card">
+    <h3>Freelance Graphic Designer</h3>
+    <span>2019 - Present</span>
+  </div>
+
+  <div class="card">
+    <h3>Laboratory Technician</h3>
+    <span>2023 - 2025</span>
   </div>
 
   <h2 class="section-title">⚡ SKILLS</h2>
   <div class="skills">
     <span>Graphic Design</span>
     <span>Branding</span>
-    <span>UI Design</span>
     <span>Photoshop</span>
     <span>Canva</span>
   </div>
-
-  <h2 class="section-title">🛠 TOOLS</h2>
-  <div class="skills">
-    <span>Adobe Photoshop</span>
-    <span>Canva</span>
-    <span>After Effects</span>
-    <span>Figma</span>
-  </div>
-
 </section>
 
 <!-- CONTACT -->
@@ -103,7 +101,7 @@
   <p>
     LinkedIn:
     <a href="https://www.linkedin.com/in/mcdroe-erenea-567340192" target="_blank">
-      linkedin.com/in/mcdroe-erenea
+      View Profile
     </a>
   </p>
 </section>
@@ -111,7 +109,10 @@
 <!-- MODAL -->
 <div id="modal" class="modal">
   <span id="close">&times;</span>
-  <img id="modal-img">
+  <div class="modal-content">
+    <img id="modal-img">
+    <div id="modal-desc"></div>
+  </div>
 </div>
 
 <script src="script.js"></script>
